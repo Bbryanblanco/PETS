@@ -1,6 +1,3 @@
-<?php
-    require "authenticate.php";
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,46 +7,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P.E.T.S</title>
     <style>
-        .welcome-text{
-            color: white;
-            position: relative;
-            top: 0.5rem;
-            right: 3rem;
-            font-size: 17px;
-            font-weight: 700;
-        }
-        .welcome-link{
-            text-decoration: none;
-            color: #fbbe28;
-            font-size: 17px;
-        }
-        .welcome-link:hover{
-            color: #fbbe28;
-            text-decoration: underline;
-        }
-        .logoutbtn{
-            width: 100px;
-            position: relative;
-            right: 7rem;
-            padding: 2px 15px;
-            border-radius: 70px;
-            outline: none;
-            background: #fbbe28;
-            border:1px solid white;
-            font-size: 1rem;
-            font-weight: 600;
-            color: #e8f9fd;
-            position: relative;
-            z-index: 2;
-            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-            transition: .3s ease-in-out;
-        }
-        .logoutbtn:hover{
-            color: #fbbe28;
-            background: #ff1e00;
-            scale: 1.1;
-            font-weight: 800;
-        }
+    .welcome-text {
+        color: white;
+        position: relative;
+        top: 0.5rem;
+        right: 3rem;
+        font-size: 17px;
+        font-weight: 700;
+    }
+
+    .welcome-link {
+        text-decoration: none;
+        color: #fbbe28;
+        font-size: 17px;
+    }
+
+    .welcome-link:hover {
+        color: #fbbe28;
+        text-decoration: underline;
+    }
+
+    .logoutbtn {
+        width: 100px;
+        position: relative;
+        right: 7rem;
+        padding: 2px 15px;
+        border-radius: 70px;
+        outline: none;
+        background: #fbbe28;
+        border: 1px solid white;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #e8f9fd;
+        position: relative;
+        z-index: 2;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        transition: .3s ease-in-out;
+    }
+
+    .logoutbtn:hover {
+        color: #fbbe28;
+        background: #ff1e00;
+        scale: 1.1;
+        font-weight: 800;
+    }
     </style>
     <link rel="stylesheet" href="./css/style-contact.css">
     <!-- Favicon -->
@@ -202,7 +203,7 @@
     ?>
     <!--END MAIN CONTACT FORM-->
 
-    
+
 
 
     <!-- Footer (8th SECTION) -->

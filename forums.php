@@ -1,6 +1,3 @@
-<?php
-    require "retrieve.php";
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -126,44 +123,46 @@
                 <div class="subforum-title">
                     <h1>General Information</h1>
                     <span class="create-post">
-                        <button type="button" class="createpostbtn" id="createpostbtn" data-bs-toggle="modal" data-bs-target="#createpostModal">Create Post</button>
+                        <button type="button" class="createpostbtn" id="createpostbtn" data-bs-toggle="modal"
+                            data-bs-target="#createpostModal">Create Post</button>
                     </span>
                 </div>
                 <?php $data = mysqli_fetch_array($result1); ?>
                 <?php
                     while($row = mysqli_fetch_array($result3)){?>
-                        <div class="subforum-row">
-                            <div class="subforum-icon subforum-column center">
-                                <img src="
+                <div class="subforum-row">
+                    <div class="subforum-icon subforum-column center">
+                        <img src="
                                 <?php 
                                 if($row['profile_image'] == ""){
                                 echo "./images/defaultPFP.jpg"; 
                                 } else {
                                     echo "./profile-image/".$row['profile_image'];
                                 }?>" style='height: 100%; width: 100%; object-fit: contain; border-radius: 50%;'>
-                            </div>
-                            <div class="subforum-description subforum-column">
-                                <h4><?php echo $row['post_title'] ?></h4>
-                                <p><?php echo $row['post_message'] ?></p>
-                                <p><?php if($row['post_address'] == "" && $row['post_city'] == "" && $row['post_zip_code'] == ""){
+                    </div>
+                    <div class="subforum-description subforum-column">
+                        <h4><?php echo $row['post_title'] ?></h4>
+                        <p><?php echo $row['post_message'] ?></p>
+                        <p><?php if($row['post_address'] == "" && $row['post_city'] == "" && $row['post_zip_code'] == ""){
                                     echo 'Please Add Location';
                                 } else {echo 'Last Seen At: '.$row['post_address'].' '.$row['post_city'].', '.$row['post_zip_code'];}
                                 ?></p>
-                            </div>
-                            <div class="subforum-stats subforum-column center">
-                                <span>24 Posts | 12 Topics</span>
-                            </div>
-                            <div class="subforum-info subforum-column">
-                                <b><a href="">Last post</a></b> by <a href=""><?php echo $row['first_name'] ?></a>
-                                <br>on <small><?php echo $row['date_created'] ?></small>
-                                <form action="delete.php" method="POST">
-                                    <input type="submit" value="Delete" name="delete" onclick="return confirm('Do you want to delete?')"/>
-                                    <input type="hidden" name="id" value="<?php echo $row["post_id"] ?>"/>
-                                </form>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="subforum-stats subforum-column center">
+                        <span>24 Posts | 12 Topics</span>
+                    </div>
+                    <div class="subforum-info subforum-column">
+                        <b><a href="">Last post</a></b> by <a href=""><?php echo $row['first_name'] ?></a>
+                        <br>on <small><?php echo $row['date_created'] ?></small>
+                        <form action="delete.php" method="POST">
+                            <input type="submit" value="Delete" name="delete"
+                                onclick="return confirm('Do you want to delete?')" />
+                            <input type="hidden" name="id" value="<?php echo $row["post_id"] ?>" />
+                        </form>
+                    </div>
+                </div>
                 <?php } ?>
-                
+
     </section>
 
     <!-- Footer (8th SECTION) -->
@@ -264,43 +263,49 @@
 
 
     <!-- Edit Modal -->
-    <div class="modal fade" id="createpostModal" tabindex="-1" aria-labelledby="createpostModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="editModalLabel">Create Post</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <form action="createPost.php" method="post">
-                <div class="form-group">
-                    <label for="post_title" class="form-label">Post Title</label>
-                    <input type="text" class="form-control" id="post_title" name="post_title"?>
+    <div class="modal fade" id="createpostModal" tabindex="-1" aria-labelledby="createpostModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="editModalLabel">Create Post</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="form-group mt-1">
-                    <label for="post_message" class="form-label">Message</label>
-                    <textarea cols="30" rows="10" class="form-control" id="post_message" name="post_message"></textarea>
+                <div class="modal-body">
+                    <form action="createPost.php" method="post">
+                        <div class="form-group">
+                            <label for="post_title" class="form-label">Post Title</label>
+                            <input type="text" class="form-control" id="post_title" name="post_title" ?>
+                        </div>
+                        <div class="form-group mt-1">
+                            <label for="post_message" class="form-label">Message</label>
+                            <textarea cols="30" rows="10" class="form-control" id="post_message"
+                                name="post_message"></textarea>
+                        </div>
+                        <div class="form-group mt-1">
+                            <fieldset>
+                                <legend>Last Seen:</legend>
+                                <label for="address" class="form-label">Address</label>
+                                <input type="text" class="form-control" id="address" name="address"
+                                    value="<?php echo $data['address']?>">
+                                <label for="city" class="form-label" value="<?php $data['city']?>">City</label>
+                                <input type="text" class="form-control" id="city" name="city"
+                                    value="<?php echo $data['city']?>">
+                                <label for="region" class="form-label">Region/State</label>
+                                <input type="text" class="form-control" id="region" name="region"
+                                    value="<?php echo $data['region']?>">
+                                <label for="zipcode" class="form-label">Zip Code</label>
+                                <input type="text" class="form-control" id="zipcode" name="zipcode"
+                                    value="<?php echo $data['zip_code']?>">
+                            </fieldset>
+                        </div>
                 </div>
-                <div class="form-group mt-1">
-                    <fieldset>
-                        <legend>Last Seen:</legend>
-                        <label for="address" class="form-label">Address</label>
-                        <input type="text" class="form-control" id="address" name="address" value="<?php echo $data['address']?>">
-                        <label for="city" class="form-label" value="<?php $data['city']?>">City</label>
-                        <input type="text" class="form-control" id="city" name="city" value="<?php echo $data['city']?>">
-                        <label for="region" class="form-label">Region/State</label>
-                        <input type="text" class="form-control" id="region" name="region" value="<?php echo $data['region']?>">
-                        <label for="zipcode" class="form-label">Zip Code</label>
-                        <input type="text" class="form-control" id="zipcode" name="zipcode" value="<?php echo $data['zip_code']?>">
-                    </fieldset>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <input type="submit" value="Create Post" name="createPost" class="btn btn-primary">
                 </div>
+            </div>
+            </form>
         </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <input type="submit" value="Create Post" name="createPost" class="btn btn-primary">
-        </div>
-        </div>
-        </form>
-    </div>
     </div>
 </body>

@@ -71,6 +71,7 @@ nav ul li a:hover {
   border-radius: 50px;
   outline: none;
   position: relative;
+  right: 3em;
 }
 
 nav form button {
@@ -111,28 +112,6 @@ nav form button:hover {
 }
 
 .loginbtn:hover {
-  color: #fbbe28;
-  background: #ff1e00;
-  scale: 1.1;
-  font-weight: 800;
-}
-
-.createpostbtn{
-  width: 150px;
-  padding: 2px 15px;
-  border-radius: 70px;
-  outline: none;
-  background: #ff862f;
-  border: 1px solid #ffffff;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #e8f9fd;
-  position: relative;
-  z-index: 2;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  transition: 0.3s ease-in-out;
-}
-.createpostbtn:hover{
   color: #fbbe28;
   background: #ff1e00;
   scale: 1.1;
@@ -197,7 +176,7 @@ nav form button:hover {
   width: 800px;
   height: auto;
   position: relative;
-  top: 82px;
+  top: 70px;
   right: 115px;
   z-index: 2;
   -o-object-fit: cover;

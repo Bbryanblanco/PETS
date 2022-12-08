@@ -1,8 +1,6 @@
-<?php
-    require "authenticate.php";
-?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -75,7 +73,7 @@
     <nav class="container-fluid sticky-top">
         <!-- LOGO -->
         <a href="#">
-            <img src="./images/newlogo.png" class="logo" alt="P.E.T.S logo">
+            <!-- <img src="./images/newlogo.png" class="logo" alt="P.E.T.S logo"> -->
         </a>
         <!------------ FOR BACK END ------------>
         <!-- Page navigation link -->
@@ -174,7 +172,7 @@
                         with the subject line LOST PET.</p>
                 </div>
 
-                <div class="col-lg-3 services mx-4 py-4 px-3">
+                <div class="col-lg-3 services mx-4 py-3 px-3">
                     <img src="./images/carddog2.png" class="services-img" alt="">
                     <h4 class="bold">Community <br> search</h4>
                     <p class="par2">Check your city pound immediately. If your pet was loose on the streets, he/she
